@@ -1,12 +1,20 @@
 import React, { useEffect, useState } from "react";
 import api from "../services/api";
 import MovieCard from "../components/MovieCard";
-import Modal from "../components/Modal";
 import { Wrapper, Container } from "./styles/HomeScreen";
 
 const HomeScreen = () => {
   const [films, setFilms] = useState([]);
-  const [buttonModal, setButtonModal] = useState(false);
+
+  const handleOnWheel = () => {
+    document.querySelector(Container).addEventListener("wheel", (event) => {
+      if (event.deltaY > 0) {
+        event.target.scrollBy(400, 0);
+      } else {
+        event.target.scrollBy(-400, 0);
+      }
+    });
+  };
 
   useEffect(() => {
     api.get("films").then(({ data }) => {
@@ -17,14 +25,9 @@ const HomeScreen = () => {
 
   return (
     <Wrapper>
-      <Container onClick={() => setButtonModal(true)}>
-        <Modal trigger={buttonModal} setTrigger={setButtonModal}>
-          <h3>My Modal</h3>
-          <p>This is my button triggered</p>
-        </Modal>
+      <Container onWheel={handleOnWheel}>
         {films?.map((film, i) => (
           <MovieCard
-            
             title={film.title}
             image={film.image}
             japanese={film.original_title}

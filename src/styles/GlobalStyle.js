@@ -9,7 +9,8 @@ const GlobalStyle = createGlobalStyle`
     --medium-blue: #247BA0;
     --dark-blue: #006494;
     --deep-blue: #13293D;
-    --salmon-gradient: linear-gradient(#f48473, #f99)
+    --salmon-gradient: linear-gradient(#f48473, #f99);
+    --medium-blue-gradient: linear-gradient(#247BA0, #006494);
 }
 
 @font-face {
@@ -20,12 +21,16 @@ const GlobalStyle = createGlobalStyle`
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 
 body {
     font-family: 'LosingGripRegular';
     font-size: 2rem;
+    display: grid;
+    place-items: center;
+    height: 100vh;
 }
 `;
 

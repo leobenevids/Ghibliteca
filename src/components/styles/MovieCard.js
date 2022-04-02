@@ -9,10 +9,13 @@ export const Card = styled.div`
   margin: 0.25rem;
   padding: 0.25rem;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  max-width: 15rem;
+  width: auto;
   background: var(--white);
   border-radius: 5px;
-  
+  flex: none;
+  scroll-snap-align: start;
+  pointer-events: none;
+
   img {
     max-height: 100%;
     height: 350px;
@@ -35,6 +38,6 @@ export const Card = styled.div`
 
   :hover {
     cursor: pointer;
-    transform: scale(1.03);
+    transform: scale(1.01);
   }
 `;
