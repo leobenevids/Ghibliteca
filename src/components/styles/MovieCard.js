@@ -11,7 +11,6 @@ export const Card = styled.div`
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   width: auto;
   background: var(--white);
-  border-radius: 5px;
   flex: none;
   scroll-snap-align: start;
   pointer-events: none;
@@ -19,9 +18,8 @@ export const Card = styled.div`
   img {
     max-height: 100%;
     height: 350px;
-    border-radius: 5px;
     point-events: touch;
-    
+
     :hover {
       cursor: pointer;
       transform: scale(1.01);
@@ -40,5 +38,14 @@ export const Card = styled.div`
     width: 100%;
     display: flex;
     justify-content: space-around;
+  }
+
+  @media screen and (max-width: 760px) {
+    width: 90vw;
+    justify-content: center;
+
+    img {
+      width: 90%;
+    }
   }
 `;
