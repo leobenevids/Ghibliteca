@@ -31,7 +31,9 @@ body {
     display: grid;
     place-items: center;
     height: 100vh;
+    background: var(--white);
 }
+
 `;
 
 export default GlobalStyle;

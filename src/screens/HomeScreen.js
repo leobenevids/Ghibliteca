@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import api from "../services/api";
 import MovieCard from "../components/MovieCard";
-import { Wrapper, Container } from "./styles/HomeScreen";
+import MovieModal from "../components/MovieModal";
+import { Wrapper, Container} from "./styles/HomeScreen";
 
 const HomeScreen = () => {
   const [films, setFilms] = useState([]);
@@ -24,19 +25,31 @@ const HomeScreen = () => {
   }, []);
 
   return (
-    <Wrapper>
-      <Container onWheel={handleOnWheel}>
-        {films?.map((film, i) => (
-          <MovieCard
-            title={film.title}
-            image={film.image}
-            japanese={film.original_title}
-            score={film.rt_score}
-            date={film.release_date}
-          />
-        ))}
-      </Container>
-    </Wrapper>
+    <>
+      <Wrapper>
+        <Container onWheel={handleOnWheel}>
+          {films?.map((film, i) => (
+            <>
+              <MovieCard
+                title={film.title}
+                image={film.image}
+                japanese={film.original_title}
+                score={film.rt_score}
+                date={film.release_date}
+              />
+              <MovieModal
+                original={film.original_title}
+                romanised={film.original_title_romanised}
+                banner={film.movie_banner}
+                description={film.description}
+                director={film.director}
+                producer={film.producer}
+              />
+            </>
+          ))}
+        </Container>
+      </Wrapper>
+    </>
   );
 };
 

@@ -20,6 +20,12 @@ export const Card = styled.div`
     max-height: 100%;
     height: 350px;
     border-radius: 5px;
+    point-events: touch;
+    
+    :hover {
+      cursor: pointer;
+      transform: scale(1.01);
+    }
   }
 
   .title {
@@ -34,10 +40,5 @@ export const Card = styled.div`
     width: 100%;
     display: flex;
     justify-content: space-around;
-  }
-
-  :hover {
-    cursor: pointer;
-    transform: scale(1.01);
   }
 `;
