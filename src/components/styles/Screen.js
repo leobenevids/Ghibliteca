@@ -1,5 +1,6 @@
 import styled from "styled-components";
 
+
 export const Wrapper = styled.div`
   display: flex;
   align-items: center;
@@ -14,18 +15,19 @@ export const Wrapper = styled.div`
     rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
     rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 
-    @media screen and (max-width: 900px) {
-      width: 80vw;
-    }
 
-  @media screen and (max-width: 760px){
+  @media screen and (max-width: 900px) {
+    width: 80vw;
+  }
+
+  @media screen and (max-width: 760px) {
+    background: #000b18;
     width: 100vw;
     height: 100vh;
     flex-direction: column;
     margin: 0;
     padding: 0;
   }
-  
 `;
 
 export const Container = styled.div`
@@ -39,9 +41,10 @@ export const Container = styled.div`
 
   @media screen and (max-width: 900px) {
     width: 100vw;
+    hieght: 100vh;
   }
 
-  @media screen and (max-width: 760px){
+  @media screen and (max-width: 760px) {
     width: 100vw;
     flex-direction: column;
     align-items: center;

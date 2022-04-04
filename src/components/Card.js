@@ -1,5 +1,5 @@
 import React from "react";
-import { Card } from "./styles/MovieCard";
+import { Card } from "./styles/Card";
 
 const MovieCard = ({ title, image, score, date, japanese, _callback }) => {
 

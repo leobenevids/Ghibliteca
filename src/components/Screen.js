@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
 import api from "../services/api";
-import MovieCard from "../components/MovieCard";
-import MovieModal from "../components/MovieModal";
-import { Wrapper, Container } from "./styles/HomeScreen";
+import Card from "./Card";
+import Modal from "./Modal";
+import Title from "./Title";
+import Button from "./Button";
+import { Wrapper, Container } from "./styles/Screen";
 
 const HomeScreen = () => {
   const [films, setFilms] = useState([]);
@@ -10,9 +12,9 @@ const HomeScreen = () => {
   const handleOnWheel = () => {
     document.querySelector(Container).addEventListener("wheel", (event) => {
       if (event.deltaY > 0) {
-        event.target.scrollBy(400, 0);
+        event.target.scrollBy(500, 0);
       } else {
-        event.target.scrollBy(-400, 0);
+        event.target.scrollBy(-500, 0);
       }
     });
   };
@@ -26,18 +28,19 @@ const HomeScreen = () => {
 
   return (
     <>
+      <Title />
       <Wrapper>
         <Container onWheel={handleOnWheel}>
           {films?.map((film, i) => (
             <>
-              <MovieCard
+              <Card
                 title={film.title}
                 image={film.image}
                 japanese={film.original_title}
                 score={film.rt_score}
                 date={film.release_date}
               />
-              <MovieModal
+              <Modal
                 original={film.original_title}
                 romanised={film.original_title_romanised}
                 banner={film.movie_banner}
@@ -49,6 +52,7 @@ const HomeScreen = () => {
           ))}
         </Container>
       </Wrapper>
+      <Button />
     </>
   );
 };

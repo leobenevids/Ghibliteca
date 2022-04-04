@@ -14,16 +14,15 @@ export const Card = styled.div`
   flex: none;
   scroll-snap-align: start;
   pointer-events: none;
+  border-radius: 5px;
 
   img {
     max-height: 100%;
     height: 350px;
     point-events: touch;
-
-    :hover {
-      cursor: pointer;
-      transform: scale(1.01);
-    }
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+      rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    border-radius: 5px;
   }
 
   .title {
@@ -42,10 +41,9 @@ export const Card = styled.div`
 
   @media screen and (max-width: 760px) {
     width: 90vw;
-    justify-content: center;
+    border-radius: 0;
 
     img {
-      width: 90%;
     }
   }
 `;

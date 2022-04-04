@@ -1,5 +1,5 @@
 import React from "react";
-import { Modal } from "./styles/MovieModal";
+import { Modal } from "./styles/Modal";
 
 const MovieModal = ({
   original,

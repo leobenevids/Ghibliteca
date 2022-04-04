@@ -15,6 +15,7 @@ export const Modal = styled.div`
   width: auto;
   background: linear-gradient(#e8f2f2, #247ba0, #006494);
   font-family: "LouisGeorgeCafeBold";
+  border-radius: 5px;
 
   .title {
     width: 100%;
@@ -42,6 +43,7 @@ export const Modal = styled.div`
     box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px,
       rgba(6, 24, 44, 0.65) 0px 4px 6px -1px,
       rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+      border-radius: 5px;
   }
 
   .text-container {
@@ -53,19 +55,22 @@ export const Modal = styled.div`
     font-family: "LouisGeorgeCafe";
     min-height: 160px;
     background: var(--white);
+    border-radius: 5px;
+    
   }
 
   p {
     text-align: center;
     font-size: 1.2rem;
+  
 
     -moz-transform: translateY(100%);
     -webkit-transform: translateY(100%);
     transform: translateY(100%);
 
-    -moz-animation: my-animation 10s linear infinite;
-    -webkit-animation: my-animation 10s linear infinite;
-    animation: my-animation 10s linear infinite;
+    -moz-animation: my-animation 15s linear infinite;
+    -webkit-animation: my-animation 15s linear infinite;
+    animation: my-animation 20s linear infinite;
   }
 
   @-webkit-keyframes my-animation {
@@ -98,7 +103,9 @@ export const Modal = styled.div`
     color: var(--white);
   }
 
-  @media screen and (max-width: 760px){
+  @media screen and (max-width: 760px) {
+    border-radius: 0;
+
     img {
       width: 90%;
     }

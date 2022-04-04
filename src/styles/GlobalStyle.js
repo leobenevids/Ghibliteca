@@ -3,20 +3,24 @@ import LosingGripRegular from "../fonts/LosingGripRegular-YxG4.ttf";
 import LouisGeorgeCafe from "../fonts/LouisGeorgeCafe.ttf";
 import LouisGeorgeCafeBold from "../fonts/LouisGeorgeCafeBold.ttf";
 import LouisGeorgeCafeLight from "../fonts/LouisGeorgeCafeLight.ttf";
+import totoro1 from "../assets/totorocursor1.png";
+import totoro2 from "../assets/totorocursor2.png";
+
 
 
 const GlobalStyle = createGlobalStyle`
 
 :root {
     --white: #E8F1F2;
-    --light-blue: #1B98E0;
+    --light-blue: #9BD1E5;
     --medium-blue: #247BA0;
+    --shadow-blue: #6A8EAE;
     --dark-blue: #006494;
     --deep-blue: #13293D;
-    --salmon-gradient: linear-gradient(#f48473, #f99);
+    --light-cyan: #D1FAFF;
     --medium-blue-gradient: linear-gradient(#247BA0, #006494);
     --white-blue-gradient: linear-gradient(#e8f1f2, #247ba0);
-    --blue-white-gradient: linear-gradient(#247ba0, #e8f2f2);
+    --blue-white-gradient: linear-gradient(#9BD1E5, #E8F1F2);
 }
 
 @font-face {
@@ -54,7 +58,21 @@ body {
     place-items: center;
     height: 100vh;
     background: var(--white);
+    cursor: url(${totoro1}), pointer;
+
+    :hover{
+      cursor: url(${totoro2}), auto;
+     }
+    
+    
+
+
+    @media screen and (max-width: 760px){
+    background: black;
+    }
 }
+
+
 
 `;
 

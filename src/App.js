@@ -1,13 +1,13 @@
 import React from "react";
 import GlobalStyle from "./styles/GlobalStyle";
 // Screens
-import HomeScreen from "./screens/HomeScreen";
+import Screen from "./components/Screen";
 
 function App() {
   return (
     <>
       <GlobalStyle />
-      <HomeScreen />
+      <Screen />
     </>
   );
 }
