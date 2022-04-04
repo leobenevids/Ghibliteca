@@ -26,24 +26,28 @@ export const Card = styled.div`
   }
 
   .title {
-    color: var(--deep-blue);
-  }
+    display: flex;
+    flex-direction: column;
+    
 
-  .sub {
-    font-size: 0.8rem;
+    p {
+      color: var(--deep-blue);
+    }
+
+    span {
+      font-size: 0.8rem;
+    }
   }
 
   footer {
     width: 100%;
     display: flex;
     justify-content: space-around;
+    align-items: center;
   }
 
   @media screen and (max-width: 760px) {
     width: 90vw;
     border-radius: 0;
-
-    img {
-    }
   }
 `;

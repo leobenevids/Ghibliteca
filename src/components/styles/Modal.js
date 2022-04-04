@@ -18,7 +18,6 @@ export const Modal = styled.div`
   border-radius: 5px;
 
   .title {
-    width: 100%;
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -101,6 +100,7 @@ export const Modal = styled.div`
     justify-content: space-around;
     font-size: 0.9rem;
     color: var(--white);
+    font-weight: bold;
   }
 
   @media screen and (max-width: 760px) {

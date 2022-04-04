@@ -15,6 +15,7 @@ const MovieModal = ({
         <h1>{original}</h1>
         <small>{romanised}</small>
       </div>
+      
       <img src={banner} alt={banner} />
       <div className="text-container">
         <p>{description}</p>

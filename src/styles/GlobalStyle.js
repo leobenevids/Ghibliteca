@@ -3,10 +3,9 @@ import LosingGripRegular from "../fonts/LosingGripRegular-YxG4.ttf";
 import LouisGeorgeCafe from "../fonts/LouisGeorgeCafe.ttf";
 import LouisGeorgeCafeBold from "../fonts/LouisGeorgeCafeBold.ttf";
 import LouisGeorgeCafeLight from "../fonts/LouisGeorgeCafeLight.ttf";
+import Bebas from "../fonts/Bebas-Regular.ttf";
 import totoro1 from "../assets/totorocursor1.png";
 import totoro2 from "../assets/totorocursor2.png";
-
-
 
 const GlobalStyle = createGlobalStyle`
 
@@ -21,6 +20,7 @@ const GlobalStyle = createGlobalStyle`
     --medium-blue-gradient: linear-gradient(#247BA0, #006494);
     --white-blue-gradient: linear-gradient(#e8f1f2, #247ba0);
     --blue-white-gradient: linear-gradient(#9BD1E5, #E8F1F2);
+    --red: #e50914;
 }
 
 @font-face {
@@ -44,6 +44,11 @@ const GlobalStyle = createGlobalStyle`
     src: url(${LouisGeorgeCafeBold});
 }
 
+@font-face {
+    font-family: 'Bebas';
+    src: url(${Bebas});
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -59,11 +64,6 @@ body {
     height: 100vh;
     background: var(--white);
     cursor: url(${totoro1}), pointer;
-
-    :hover{
-      cursor: url(${totoro2}), auto;
-     }
-    
     
 
 

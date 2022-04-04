@@ -1,7 +1,8 @@
 import styled from "styled-components";
+import totorocursor2 from "../../assets/totorocursor2.png";
 
 export const TitleHeader = styled.div`
-  dispaly: flex;
+  display: flex;
   width: 100%;
   align-items: center;
   justify-content: center;
@@ -10,11 +11,15 @@ export const TitleHeader = styled.div`
   font-size: 3.5rem;
   color: var(--deep-blue);
 
-  
+  p {
+    :hover {
+      cursor: url(${totorocursor2}), auto;
+    }
 
-  span {
-    font-family: "LosingGripRegular";
-    font-size: 5rem;
-    color: var(--dark-blue);
+    span {
+      font-family: "LosingGripRegular";
+      font-size: 5rem;
+      color: var(--dark-blue);
+    }
   }
 `;
