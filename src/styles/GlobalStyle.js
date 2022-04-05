@@ -72,6 +72,47 @@ body {
     }
 }
 
+button {
+    margin: 1rem auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: "LouisGeorgeCafeBold";
+    font-size: 1rem;
+    height: 3.2rem;
+    width: 8rem;
+    background: var(--white);
+    border-radius: 5px;
+    border: none;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+
+    span {
+    font-family: "Bebas";
+    color: var(--red);
+    font-size: 1.6rem;
+  }
+
+
+    :hover {
+      cursor: url(${totoro2}), auto;
+      color: var(--white);
+      background: var(--red);
+      transition: ease-in-out 0.5s;
+
+      p {
+        display: none;
+      }
+
+      span {
+        color: var(--white);
+      }
+    }
+  
+
+ 
+}
+
 
 
 `;

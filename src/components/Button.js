@@ -1,22 +1,21 @@
 import React, { useState } from "react";
 import { LinkButton } from "./styles/Button.js";
-import Popup from "../components/Popup";
 
 const Button = () => {
   const [openPopup, setOpenPopup] = useState(false);
 
   return (
     <>
-      <LinkButton
-        onClick={() => {
-          setOpenPopup(true);
-        }}
-      >
-        <button>
+      <LinkButton>
+        <button
+          onClick={() => {
+            setOpenPopup(true);
+          }}
+        >
           <p>watch on</p> <span>Netflix</span>
+          {openPopup}
         </button>
       </LinkButton>
-      {openPopup && <Popup closePopup={setOpenPopup} />}
     </>
   );
 };

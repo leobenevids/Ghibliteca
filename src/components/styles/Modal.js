@@ -56,6 +56,7 @@ export const Modal = styled.div`
     }
 
     p {
+      z-index: 0;
       text-align: center;
       font-size: 1.2rem;
 

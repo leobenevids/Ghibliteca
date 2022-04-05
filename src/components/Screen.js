@@ -9,11 +9,11 @@ import { Wrapper, Container } from "./styles/Screen";
 
 const HomeScreen = () => {
   const [films, setFilms] = useState([]);
-  const [closePopup, setClosePopup] = useState(false)
+  const [openPopup, setOpenPopup] = useState(false);
 
   const handleOnWheel = () => {
     document.querySelector(Container).addEventListener("wheel", (event) => {
-      if (event.deltaY < 0) {
+      if (event.deltaY > 0) {
         event.target.scrollBy(500, 0);
       } else {
         event.target.scrollBy(-500, 0);
@@ -32,6 +32,7 @@ const HomeScreen = () => {
     <>
       <Title />
       <Wrapper>
+      {openPopup && <Popup closePopup={setOpenPopup} />}
         <Container onWheel={handleOnWheel}>
           {films?.map((film, i) => (
             <>
@@ -54,7 +55,9 @@ const HomeScreen = () => {
           ))}
         </Container>
       </Wrapper>
-      <Button />
+      <button onClick={() => setOpenPopup(true)}>
+        <p>watch on</p> <span>Netflix</span>
+      </button>
     </>
   );
 };

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Background, Container, Content, Buttons } from "./styles/Popup";
 
 const Popup = ({ closePopup }) => {
@@ -10,11 +10,11 @@ const Popup = ({ closePopup }) => {
     <Background>
       <Container>
         <Content>
-          You'll be redirect to another page. Do you wish to continue?
+          Oh! Do you wanna go to <span>Netflix</span>?
         </Content>
         <Buttons>
           <button onClick={() => closePopup(false)}>Cancel</button>
-          <button onClick={openLink}>Confirm</button>
+          <button className="confirmButton" onClick={openLink}>Confirm</button>
         </Buttons>
       </Container>
     </Background>
