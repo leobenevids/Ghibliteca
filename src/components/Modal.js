@@ -12,13 +12,15 @@ const MovieModal = ({
   return (
     <Modal>
       <div className="title">
-        <h1>{original}</h1>
-        <small>{romanised}</small>
+        <p>{original}</p>
+        <span>{romanised}</span>
       </div>
-      
-      <img src={banner} alt={banner} />
-      <div className="text-container">
-        <p>{description}</p>
+
+      <div className="content">
+        <img src={banner} alt={banner} />
+        <div className="text-container">
+          <p>{description}</p>
+        </div>
       </div>
 
       <footer>

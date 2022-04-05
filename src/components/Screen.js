@@ -4,14 +4,16 @@ import Card from "./Card";
 import Modal from "./Modal";
 import Title from "./Title";
 import Button from "./Button";
+import Popup from "./Popup";
 import { Wrapper, Container } from "./styles/Screen";
 
 const HomeScreen = () => {
   const [films, setFilms] = useState([]);
+  const [closePopup, setClosePopup] = useState(false)
 
   const handleOnWheel = () => {
     document.querySelector(Container).addEventListener("wheel", (event) => {
-      if (event.deltaY > 0) {
+      if (event.deltaY < 0) {
         event.target.scrollBy(500, 0);
       } else {
         event.target.scrollBy(-500, 0);

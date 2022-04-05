@@ -63,7 +63,7 @@ body {
     place-items: center;
     height: 100vh;
     background: var(--white);
-    cursor: url(${totoro1}), pointer;
+    /* cursor: url(${totoro1}), pointer; */
     
 
 
