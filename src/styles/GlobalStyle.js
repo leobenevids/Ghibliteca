@@ -4,7 +4,6 @@ import LouisGeorgeCafe from "../fonts/LouisGeorgeCafe.ttf";
 import LouisGeorgeCafeBold from "../fonts/LouisGeorgeCafeBold.ttf";
 import LouisGeorgeCafeLight from "../fonts/LouisGeorgeCafeLight.ttf";
 import Bebas from "../fonts/Bebas-Regular.ttf";
-import totoro1 from "../assets/totorocursor1.png";
 import totoro2 from "../assets/totorocursor2.png";
 
 const GlobalStyle = createGlobalStyle`
@@ -16,7 +15,7 @@ const GlobalStyle = createGlobalStyle`
     --shadow-blue: #6A8EAE;
     --dark-blue: #006494;
     --deep-blue: #13293D;
-    --light-cyan: #D1FAFF;
+    --confirm-blue: #3E92CC;
     --medium-blue-gradient: linear-gradient(#247BA0, #006494);
     --white-blue-gradient: linear-gradient(#e8f1f2, #247ba0);
     --blue-white-gradient: linear-gradient(#9BD1E5, #E8F1F2);
@@ -63,7 +62,6 @@ body {
     place-items: center;
     height: 100vh;
     background: var(--white);
-    /* cursor: url(${totoro1}), pointer; */
     
 
 
@@ -97,7 +95,7 @@ button {
     :hover {
       cursor: url(${totoro2}), auto;
       color: var(--white);
-      background: var(--red);
+      background: rgba(229, 9, 2, 0.8);
       transition: ease-in-out 0.5s;
 
       p {

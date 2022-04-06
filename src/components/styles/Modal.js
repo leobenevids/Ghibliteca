@@ -17,24 +17,28 @@ export const Modal = styled.div`
     display: flex;
     flex-direction: column;
     width: 100%;
+    min-height: 45px;
     margin-bottom: 0.2rem;
+
 
     p {
       color: var(--dark-blue);
-      font-size: 1vw;
+      font-size: 2vh;
       font-weight: bold;
       overflow: hidden;
     }
 
     span {
-      font-size: 1.5vh;
-      font-family: "LouisGeorgeCafe";
       color: var(--deep-blue);
+      font-size: 1.3vh;
+      font-family: "LouisGeorgeCafeBold";
     }
   }
 
   .content {
     max-height: 350px;
+
+
 
     img {
       max-height: 170px;
@@ -96,12 +100,17 @@ export const Modal = styled.div`
     font-size: 1.2vh;
     width: 100%;
     height: 100%;
+    min-heigh: 45px;
     display: flex;
     justify-content: space-around;
     align-items: center;
     color: var(--white);
     font-weight: bold;
   }
+
+  // Breakpoints
+
+  
 
   @media screen and (max-width: 760px) {
     border-radius: 0;

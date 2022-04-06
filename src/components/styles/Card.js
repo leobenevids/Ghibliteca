@@ -14,15 +14,17 @@ export const Card = styled.div`
   flex: none;
   scroll-snap-align: start;
   pointer-events: none;
+  
 
   .title {
     display: flex;
     flex-direction: column;
     width: 100%;
+    min-height: 45px;
 
     p {
       color: var(--deep-blue);
-      font-size: 1.45vw;
+      font-size: 2.8vh;
     }
 
     span {
@@ -33,7 +35,6 @@ export const Card = styled.div`
   }
 
   img {
-    max-height: 100%;
     max-height: 350px;
     point-events: touch;
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
@@ -46,10 +47,13 @@ export const Card = styled.div`
     font-size: 3vh;
     width: 100%;
     height: 100%;
+    min-heigh: 45px;
     display: flex;
     justify-content: space-around;
     align-items: center;
   }
+
+
 
   @media screen and (max-width: 760px) {
     width: 90vw;

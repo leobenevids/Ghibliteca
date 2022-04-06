@@ -8,7 +8,7 @@ export const Wrapper = styled.div`
   text-align: center;
   background: var(--white);
   height: 100%;
-  width: 32vw;
+  width: 24vw;
   min-width: 620px;
   border-radius: 5px;
   background: var(--white-blue-gradient);
