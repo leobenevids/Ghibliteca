@@ -14,7 +14,6 @@ export const Card = styled.div`
   flex: none;
   scroll-snap-align: start;
   pointer-events: none;
-  
 
   .title {
     display: flex;
@@ -53,10 +52,22 @@ export const Card = styled.div`
     align-items: center;
   }
 
-
-
   @media screen and (max-width: 760px) {
-    width: 90vw;
+    width: 100%;
     border-radius: 0;
+
+    .title {
+      p {
+        font-size: 4vh;
+      }
+
+      span {
+        font-size: 1.1vh;
+      }
+    }
+
+    footer {
+      font-size: 4vh;
+    }
   }
 `;

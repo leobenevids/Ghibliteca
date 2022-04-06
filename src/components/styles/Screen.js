@@ -20,18 +20,12 @@ export const Wrapper = styled.div`
       cursor: url(${totorocursor2}), auto;
   }
 
-
-  @media screen and (max-width: 900px) {
-    width: 80vw;
-  }
-
   @media screen and (max-width: 760px) {
-    background: #000b18;
-    width: 100vw;
-    height: 100vh;
     flex-direction: column;
-    margin: 0;
-    padding: 0;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-width: 100%;
   }
 `;
 
@@ -44,14 +38,9 @@ export const Container = styled.div`
   -webkit-overflow-scrolling: touch;
   scroll-behavior: smooth;
 
-  @media screen and (max-width: 900px) {
-    width: 100vw;
-    hieght: 100vh;
-  }
-
   @media screen and (max-width: 760px) {
-    width: 100vw;
     flex-direction: column;
-    align-items: center;
+    margin: 0;
+    pading: 0;
   }
 `;

@@ -20,7 +20,6 @@ export const Modal = styled.div`
     min-height: 45px;
     margin-bottom: 0.2rem;
 
-
     p {
       color: var(--dark-blue);
       font-size: 2vh;
@@ -37,8 +36,6 @@ export const Modal = styled.div`
 
   .content {
     max-height: 350px;
-
-
 
     img {
       max-height: 170px;
@@ -108,19 +105,40 @@ export const Modal = styled.div`
     font-weight: bold;
   }
 
-  // Breakpoints
-
-  
 
   @media screen and (max-width: 760px) {
     border-radius: 0;
+    width: 100%;
+
+    .title{
+      p{
+        font-size: 2.5vh;
+      }
+
+      span {
+        font-size: 1.5vh;
+      }
+    }
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 300px;
+    }
 
     img {
-      width: 90%;
+      height: 100%;
+      margin-bottom: 10px;
     }
 
     .text-container {
-      width: 90%;
+      height: 90%;
+    }
+
+    footer {
+      font-size: 1.5vh;
     }
   }
 `;

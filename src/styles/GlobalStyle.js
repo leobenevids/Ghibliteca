@@ -62,12 +62,6 @@ body {
     place-items: center;
     height: 100vh;
     background: var(--white);
-    
-
-
-    @media screen and (max-width: 760px){
-    background: black;
-    }
 }
 
 button {
@@ -107,7 +101,9 @@ button {
       }
     }
   
-
+    @media screen and (max-width: 768px) {
+        display: none;
+    }
  
 }
 

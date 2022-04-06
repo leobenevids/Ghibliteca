@@ -32,7 +32,7 @@ const HomeScreen = () => {
     <>
       <Title />
       <Wrapper>
-      {openPopup && <Popup closePopup={setOpenPopup} />}
+        {openPopup && <Popup closePopup={setOpenPopup} />}
         <Container onWheel={handleOnWheel}>
           {films?.map((film, i) => (
             <>

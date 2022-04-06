@@ -22,4 +22,8 @@ export const TitleHeader = styled.div`
       color: var(--dark-blue);
     }
   }
+
+  @media screen and (max-width: 768px){
+    display: none;
+  }
 `;
