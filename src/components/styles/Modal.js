@@ -100,7 +100,7 @@ export const Modal = styled.div`
     font-size: 1.2vh;
     width: 100%;
     height: 100%;
-    min-heigh: 45px;
+    min-height: 40px;
     display: flex;
     justify-content: space-around;
     align-items: center;

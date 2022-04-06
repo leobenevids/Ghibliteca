@@ -96,7 +96,7 @@ button {
       cursor: url(${totoro2}), auto;
       color: var(--white);
       background: rgba(229, 9, 2, 0.8);
-      transition: ease-in-out 0.5s;
+      transition: ease-in-out 0.4s;
 
       p {
         display: none;

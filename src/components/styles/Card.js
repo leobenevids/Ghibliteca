@@ -36,7 +36,7 @@ export const Card = styled.div`
 
   img {
     max-height: 350px;
-    point-events: touch;
+    pointer-events: touch;
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
       rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
     border-radius: 5px;
@@ -47,7 +47,7 @@ export const Card = styled.div`
     font-size: 3vh;
     width: 100%;
     height: 100%;
-    min-heigh: 45px;
+    min-height: 40px;
     display: flex;
     justify-content: space-around;
     align-items: center;

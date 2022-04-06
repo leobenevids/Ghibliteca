@@ -27,11 +27,24 @@ export const Container = styled.div`
   font-family: "LouisGeorgeCafe";
   font-size: 1.5rem;
   position: absolute;
+
+  top: -400px;
+  animation: drop 0.4s ease forwards;
+
+  @keyframes drop {
+    70% {
+      transform: translateY(800px);
+    }
+    100% {
+      transform: translateY(750px);
+    }
+  }
 `;
 
 export const Content = styled.div`
   font-size: 1.35rem;
   margin-bottom: 40px;
+
   span {
     font-family: "Bebas";
     color: var(--red);
