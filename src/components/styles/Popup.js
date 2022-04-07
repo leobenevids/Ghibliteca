@@ -33,10 +33,10 @@ export const Container = styled.div`
 
   @keyframes drop {
     70% {
-      transform: translateY(800px);
+      transform: translateY(85vh);
     }
     100% {
-      transform: translateY(750px);
+      transform: translateY(80vh);
     }
   }
 `;

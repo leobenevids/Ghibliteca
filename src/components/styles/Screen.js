@@ -8,8 +8,8 @@ export const Wrapper = styled.div`
   text-align: center;
   background: var(--white);
   height: 100%;
-  width: 24vw;
-  min-width: 620px;
+  width: 23.5vw;
+  min-width: 600px;
   border-radius: 5px;
   background: var(--white-blue-gradient);
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
@@ -26,13 +26,12 @@ export const Wrapper = styled.div`
     justify-content: center;
     width: 100%;
     min-width: 100%;
-  }
+  };
 `;
 
 export const Container = styled.div`
   display: flex;
-  padding: 1rem;
-  margin: 1rem;
+  margin: 0.5rem;
   overflow-x: hidden;
   scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch;
@@ -41,6 +40,5 @@ export const Container = styled.div`
   @media screen and (max-width: 760px) {
     flex-direction: column;
     margin: 0;
-    pading: 0;
   }
 `;
