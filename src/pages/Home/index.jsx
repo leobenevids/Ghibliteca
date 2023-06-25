@@ -8,6 +8,7 @@ import SynopsisCard from "../../components/SynopsisCard";
 import { Fragment } from "react";
 import NetflixBtn from "../../components/NetflixBtn";
 import CurrentMovieContext from "../../contexts/CurrentMovieContext";
+import MovieView from "../../components/MovieView";
 
 const Home = () => {
   const [films, setFilms] = useState([]);
@@ -52,23 +53,7 @@ const Home = () => {
           {openPopup && <Popup closePopup={setOpenPopup} />}
           <Carousel onWheel={handleOnWheel}>
             {films?.map((film, index) => (
-              <Fragment key={index}>
-                <PosterCard
-                  title={film.title}
-                  image={film.image}
-                  japanese={film.original_title}
-                  score={film.rt_score}
-                  date={film.release_date}
-                />
-                <SynopsisCard
-                  original={film.original_title}
-                  romanised={film.original_title_romanised}
-                  banner={film.movie_banner}
-                  description={film.description}
-                  director={film.director}
-                  producer={film.producer}
-                />
-              </Fragment>
+              <MovieView film={film} key={index} />
             ))}
           </Carousel>
         </CarouselContainer>
