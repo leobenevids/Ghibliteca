@@ -2,6 +2,7 @@ import styled from "styled-components";
 import totorocursor from "../../assets/images/totorocursor.png";
 
 export const Wrapper = styled.div`
+  transition: background-image 0.5s ease;
   background: url(${({ banner }) => banner});
   height: 100vh;
   width: 100%;
@@ -15,6 +16,7 @@ export const Wrapper = styled.div`
 `;
 
 export const CarouselContainer = styled.div`
+  position: relative;
   font-family: "LosingGripRegular";
   display: flex;
   align-items: center;

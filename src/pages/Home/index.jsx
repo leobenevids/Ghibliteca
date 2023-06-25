@@ -3,12 +3,11 @@ import { getFilms } from "../../services/api";
 import { Wrapper, Carousel, CarouselContainer } from "./styles";
 import Title from "../../components/Title";
 import Popup from "../../components/Popup";
-import PosterCard from "../../components/PosterCard";
-import SynopsisCard from "../../components/SynopsisCard";
 import { Fragment } from "react";
 import NetflixBtn from "../../components/NetflixBtn";
 import CurrentMovieContext from "../../contexts/CurrentMovieContext";
 import MovieView from "../../components/MovieView";
+import { Parallax } from 'react-parallax';
 
 const Home = () => {
   const [films, setFilms] = useState([]);
@@ -29,10 +28,11 @@ const Home = () => {
     const carousel = document.querySelector(Carousel);
     if (event.deltaY > 0) {
       carousel.scrollBy(500, 0);
-      setCurrentIndex((prevIndex) => prevIndex + 1);
+      currentIndex > films.length -1 ? setCurrentIndex(films.length - 1) :       setCurrentIndex((prevIndex) => prevIndex + 1);
+
     } else {
       carousel.scrollBy(-500, 0);
-      setCurrentIndex((prevIndex) => prevIndex - 1);
+      currentIndex < 0 ? setCurrentIndex(0) : setCurrentIndex((prevIndex) => prevIndex - 1);
     }
   };
 
@@ -47,7 +47,8 @@ const Home = () => {
 
   return (
     <Fragment>
-      <Wrapper banner={banner}>
+      <Parallax blur={10} bgImage={banner} strength={100}>
+        <Wrapper>
         <Title />
         <CarouselContainer>
           {openPopup && <Popup closePopup={setOpenPopup} />}
@@ -58,7 +59,8 @@ const Home = () => {
           </Carousel>
         </CarouselContainer>
         <NetflixBtn setOpenPopup={setOpenPopup} />
-      </Wrapper>
+        </Wrapper>
+      </Parallax>
     </Fragment>
   );
 };
