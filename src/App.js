@@ -1,13 +1,14 @@
-import React, { Fragment } from "react";
-import GlobalStyles from "./styles/GlobalStyles";
+import React from "react";
 import Home from "./pages/Home";
+import CurrentMovieProvider from "./contexts/CurrentMovieProvider";
+import GlobalStyles from "./styles/GlobalStyles";
 
 function App() {
   return (
-    <Fragment>
+    <CurrentMovieProvider>
       <GlobalStyles />
       <Home />
-    </Fragment>
+    </CurrentMovieProvider>
   );
 }
 

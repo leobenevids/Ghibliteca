@@ -1,5 +1,7 @@
 import React from "react";
 import { Card } from "./styles";
+import { useContext } from "react";
+import CurrentMovieContext from "../../contexts/CurrentMovieContext";
 
 const SynopsisCard = ({
   original,
@@ -9,8 +11,10 @@ const SynopsisCard = ({
   director,
   producer,
 }) => {
+  const { setBanner } = useContext(CurrentMovieContext);
+
   return (
-    <Card>
+    <Card onClick={() => setBanner(banner)}>
       <div className="title">
         <p>{original}</p>
         <span>{romanised}</span>

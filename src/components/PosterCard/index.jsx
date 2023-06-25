@@ -1,7 +1,7 @@
 import React from "react";
 import { Card } from "./styles";
 
-const PosterCard = ({ title, image, score, date, japanese, _callback }) => {
+const PosterCard = ({ title, image, score, date, japanese }) => {
   return (
     <Card>
       <div className="title">
@@ -9,7 +9,10 @@ const PosterCard = ({ title, image, score, date, japanese, _callback }) => {
         <span>{japanese}</span>
       </div>
 
-      <img src={image} alt={title} />
+      <div className="content">
+        <img src={image} alt={title} />
+      </div>
+
       <footer>
         <span>{score / 10}</span>
         <div>{date}</div>

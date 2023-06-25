@@ -4,41 +4,38 @@ export const Card = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   text-align: center;
   margin: 0.25rem;
-  padding: 0.25rem 0.5rem;
+  padding: 0.25rem;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  background: linear-gradient(#e8f2f2, #247ba0, #006494);
-  font-family: "LouisGeorgeCafeBold";
+  background: linear-gradient(rgba(232, 242, 242, 0.7), rgba(36, 123, 160, 0.7), rgba(0, 100, 148, 0.7));  font-family: "LouisGeorgeCafeBold";
   border-radius: 5px;
+  color: var(--white);
 
   .title {
     display: flex;
     flex-direction: column;
-    width: 100%;
-    min-height: 45px;
-    margin-bottom: 0.2rem;
+    margin-bottom: 0.5rem;
 
     p {
       color: var(--dark-blue);
-      font-size: 2vh;
+      font-size: 1.5rem;
       font-weight: bold;
       overflow: hidden;
     }
 
     span {
       color: var(--deep-blue);
-      font-size: 1.3vh;
+      font-size: 0.75rem;
       font-family: "LouisGeorgeCafeBold";
     }
   }
 
   .content {
-    max-height: 350px;
-
+    height: 550px;
     img {
-      max-height: 170px;
+      height: 270px;
       box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px,
         rgba(6, 24, 44, 0.65) 0px 4px 6px -1px,
         rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
@@ -46,13 +43,13 @@ export const Card = styled.div`
     }
 
     .text-container {
-      height: 170px;
+      height: 270px;
       overflow: hidden;
       box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px,
         rgba(6, 24, 44, 0.65) 0px 4px 6px -1px,
         rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
       font-family: "LouisGeorgeCafe";
-      background: var(--white);
+      background: linear-gradient(rgba(256, 256, 256. 0.8));
       border-radius: 5px;
     }
 
@@ -94,12 +91,11 @@ export const Card = styled.div`
   }
 
   footer {
-    font-size: 1.2vh;
-    width: 100%;
+    font-size: 1rem;
+    width: 95%;
     height: 100%;
-    min-height: 40px;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     color: var(--white);
     font-weight: bold;

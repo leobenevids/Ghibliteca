@@ -1,11 +1,15 @@
 import React, { useState } from "react";
 import { getFilms } from "../../services/api";
-import { Container, Wrapper } from "./styles";
+import { Wrapper, Carousel, CarouselContainer } from "./styles";
 import { useEffect } from "react";
-import Title from "../../components/Title"
-import Popup from "../../components/Popup"
+import Title from "../../components/Title";
+import Popup from "../../components/Popup";
 import PosterCard from "../../components/PosterCard";
 import SynopsisCard from "../../components/SynopsisCard";
+import { Fragment } from "react";
+import NetflixBtn from "../../components/NetflixBtn";
+import { useContext } from "react";
+import CurrentMovieContext from "../../contexts/CurrentMovieContext";
 
 const Home = () => {
   const [films, setFilms] = useState([]);
@@ -21,7 +25,7 @@ const Home = () => {
   }, []);
 
   const handleOnWheel = () => {
-    document.querySelector(Container).addEventListener("wheel", (event) => {
+    document.querySelector(Carousel).addEventListener("wheel", (event) => {
       if (event.deltaY > 0) {
         event.target.scrollBy(500, 0);
       } else {
@@ -30,39 +34,41 @@ const Home = () => {
     });
   };
 
+  const { banner } = useContext(CurrentMovieContext);
+
   return (
-    <>
+    <Fragment>
+      <Wrapper banner={banner}>
       <Title />
-      <Wrapper>
-        {openPopup && <Popup closePopup={setOpenPopup} />}
-        <Container onWheel={handleOnWheel}>
-          {films?.map((film, index) => (
-            <>
-              <PosterCard
-                key={index}
-                title={film.title}
-                image={film.image}
-                japanese={film.original_title}
-                score={film.rt_score}
-                date={film.release_date}
-              />
-              <SynopsisCard
-                key={index}
-                original={film.original_title}
-                romanised={film.original_title_romanised}
-                banner={film.movie_banner}
-                description={film.description}
-                director={film.director}
-                producer={film.producer}
-              />
-            </>
-          ))}
-        </Container>
+        <CarouselContainer>
+          {openPopup && <Popup closePopup={setOpenPopup} />}
+          <Carousel onWheel={handleOnWheel}>
+            {films?.map((film) => (
+              <Fragment>
+                <PosterCard
+                  key={film.id}
+                  title={film.title}
+                  image={film.image}
+                  japanese={film.original_title}
+                  score={film.rt_score}
+                  date={film.release_date}
+                />
+                <SynopsisCard
+                  key={film.id}
+                  original={film.original_title}
+                  romanised={film.original_title_romanised}
+                  banner={film.movie_banner}
+                  description={film.description}
+                  director={film.director}
+                  producer={film.producer}
+                />
+              </Fragment>
+            ))}
+          </Carousel>
+        </CarouselContainer>
+        <NetflixBtn setOpenPopup={setOpenPopup} />
       </Wrapper>
-      <button onClick={() => setOpenPopup(true)}>
-        <p>watch on</p> <span>Netflix</span>
-      </button>
-    </>
+    </Fragment>
   );
 };
 
