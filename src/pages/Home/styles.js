@@ -23,6 +23,7 @@ export const CarouselContainer = styled.div`
   justify-content: center;
   text-align: center;
   width: 47.5vw;
+  max-width: 910px;
   height: 67vh;
   border-radius: 5px;
   background: var(--white-blue-gradient);

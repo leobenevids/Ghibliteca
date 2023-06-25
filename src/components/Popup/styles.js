@@ -55,7 +55,14 @@ export const Buttons = styled.div`
   display: flex;
   flex-direction: row;
   width: 100%;
-  align-items: space-around;
+  justify-content: space-between;
+
+  button {
+    :hover {
+      background: var(--red);
+      color: #fff;
+    }
+  }
 
   .confirmButton {
     :hover {

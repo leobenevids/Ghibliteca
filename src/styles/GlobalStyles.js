@@ -58,8 +58,8 @@ const GlobalStyles = createGlobalStyle`
 button {
   font-family: "LouisGeorgeCafeBold";
   font-size: 1rem;
-  height: 3.2rem;
-  width: 8rem;
+  height: 60px;
+  width: 120px;
   border-radius: 5px;
   border: none;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
