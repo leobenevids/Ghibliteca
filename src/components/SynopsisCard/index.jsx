@@ -1,7 +1,7 @@
 import React from "react";
-import { Modal } from "./styles/Modal";
+import { Card } from "./styles";
 
-const MovieModal = ({
+const SynopsisCard = ({
   original,
   romanised,
   banner,
@@ -10,7 +10,7 @@ const MovieModal = ({
   producer,
 }) => {
   return (
-    <Modal>
+    <Card>
       <div className="title">
         <p>{original}</p>
         <span>{romanised}</span>
@@ -27,8 +27,8 @@ const MovieModal = ({
         <small>producer: {producer}</small>
         <small>director: {director}</small>
       </footer>
-    </Modal>
+    </Card>
   );
 };
 
-export default MovieModal;
+export default SynopsisCard;

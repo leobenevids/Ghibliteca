@@ -1,11 +1,12 @@
 import React, { useState } from "react";
-import { LinkButton } from "./styles/Button.js";
+import { LinkButton } from "./styles.js";
+import { Fragment } from "react";
 
 const Button = () => {
   const [openPopup, setOpenPopup] = useState(false);
 
   return (
-    <>
+    <Fragment>
       <LinkButton>
         <button
           onClick={() => {
@@ -16,7 +17,7 @@ const Button = () => {
           {openPopup}
         </button>
       </LinkButton>
-    </>
+    </Fragment>
   );
 };
 

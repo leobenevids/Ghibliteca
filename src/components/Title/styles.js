@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import totorocursor2 from "../../assets/totorocursor2.png";
+import totorocursor from "../../assets/images/totorocursor.png";
 
 export const TitleHeader = styled.div`
   display: flex;
@@ -13,7 +13,7 @@ export const TitleHeader = styled.div`
 
   p {
     :hover {
-      cursor: url(${totorocursor2}), auto;
+      cursor: url(${totorocursor}), auto;
     }
 
     span {

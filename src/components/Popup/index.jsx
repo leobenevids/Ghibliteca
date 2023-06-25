@@ -1,5 +1,5 @@
 import React from "react";
-import { Background, Container, Content, Buttons } from "./styles/Popup";
+import { Background, Container, Content, Buttons } from "./styles";
 
 const Popup = ({ closePopup }) => {
   const openLink= () => {

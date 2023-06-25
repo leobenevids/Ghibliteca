@@ -1,15 +1,24 @@
-import React, { useEffect, useState } from "react";
-import api from "../services/api";
-import Card from "./Card";
-import Modal from "./Modal";
-import Title from "./Title";
-import Button from "./Button";
-import Popup from "./Popup";
-import { Wrapper, Container } from "./styles/Screen";
+import React, { useState } from "react";
+import { getFilms } from "../../services/api";
+import { Container, Wrapper } from "./styles";
+import { useEffect } from "react";
+import Title from "../../components/Title"
+import Popup from "../../components/Popup"
+import PosterCard from "../../components/PosterCard";
+import SynopsisCard from "../../components/SynopsisCard";
 
-const HomeScreen = () => {
+const Home = () => {
   const [films, setFilms] = useState([]);
   const [openPopup, setOpenPopup] = useState(false);
+
+  const fetchMovies = async () => {
+    const response = await getFilms();
+    setFilms(response);
+  };
+
+  useEffect(() => {
+    fetchMovies();
+  }, []);
 
   const handleOnWheel = () => {
     document.querySelector(Container).addEventListener("wheel", (event) => {
@@ -21,29 +30,24 @@ const HomeScreen = () => {
     });
   };
 
-  useEffect(() => {
-    api.get("films").then(({ data }) => {
-      setFilms(data);
-    });
-    console.log(films);
-  }, []);
-
   return (
     <>
       <Title />
       <Wrapper>
         {openPopup && <Popup closePopup={setOpenPopup} />}
         <Container onWheel={handleOnWheel}>
-          {films?.map((film, i) => (
+          {films?.map((film, index) => (
             <>
-              <Card
+              <PosterCard
+                key={index}
                 title={film.title}
                 image={film.image}
                 japanese={film.original_title}
                 score={film.rt_score}
                 date={film.release_date}
               />
-              <Modal
+              <SynopsisCard
+                key={index}
                 original={film.original_title}
                 romanised={film.original_title_romanised}
                 banner={film.movie_banner}
@@ -62,4 +66,4 @@ const HomeScreen = () => {
   );
 };
 
-export default HomeScreen;
+export default Home;

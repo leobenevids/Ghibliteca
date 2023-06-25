@@ -1,14 +1,13 @@
-import React from "react";
-import GlobalStyle from "./styles/GlobalStyle";
-// Screens
-import Screen from "./components/Screen";
+import React, { Fragment } from "react";
+import GlobalStyles from "./styles/GlobalStyles";
+import Home from "./pages/Home";
 
 function App() {
   return (
-    <>
-      <GlobalStyle />
-      <Screen />
-    </>
+    <Fragment>
+      <GlobalStyles />
+      <Home />
+    </Fragment>
   );
 }
 

@@ -1,7 +1,14 @@
 import axios from "axios";
 
-const api = axios.create({
-  baseURL: "https://ghibliapi.herokuapp.com",
+const Api = axios.create({
+  baseURL: "https://ghibliapi.vercel.app",
 });
 
-export default api;
+export const getFilms = async () => {
+  try {
+    const response = await Api.get("/films")
+    return response.data
+  } catch (error) {
+    console.log(error)
+  }
+}

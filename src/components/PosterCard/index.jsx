@@ -1,14 +1,14 @@
 import React from "react";
-import { Card } from "./styles/Card";
+import { Card } from "./styles";
 
-const MovieCard = ({ title, image, score, date, japanese, _callback }) => {
+const PosterCard = ({ title, image, score, date, japanese, _callback }) => {
   return (
     <Card>
       <div className="title">
         <p>{title}</p>
         <span>{japanese}</span>
       </div>
-      
+
       <img src={image} alt={title} />
       <footer>
         <span>{score / 10}</span>
@@ -18,4 +18,4 @@ const MovieCard = ({ title, image, score, date, japanese, _callback }) => {
   );
 };
 
-export default MovieCard;
+export default PosterCard;

@@ -1,5 +1,5 @@
 import React from 'react'
-import {TitleHeader} from './styles/Title'
+import {TitleHeader} from './styles'
 
 const Title = () => {
   return (

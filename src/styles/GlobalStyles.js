@@ -1,12 +1,12 @@
 import { createGlobalStyle } from "styled-components";
-import LosingGripRegular from "../fonts/LosingGripRegular-YxG4.ttf";
-import LouisGeorgeCafe from "../fonts/LouisGeorgeCafe.ttf";
-import LouisGeorgeCafeBold from "../fonts/LouisGeorgeCafeBold.ttf";
-import LouisGeorgeCafeLight from "../fonts/LouisGeorgeCafeLight.ttf";
-import Bebas from "../fonts/Bebas-Regular.ttf";
-import totoro2 from "../assets/totorocursor2.png";
+import LosingGripRegular from "../assets/fonts/LosingGripRegular-YxG4.ttf";
+import LouisGeorgeCafe from "../assets/fonts/LouisGeorgeCafe.ttf";
+import LouisGeorgeCafeBold from "../assets/fonts/LouisGeorgeCafeBold.ttf";
+import LouisGeorgeCafeLight from "../assets/fonts/LouisGeorgeCafeLight.ttf";
+import Bebas from "../assets/fonts/Bebas-Regular.ttf";
+import totorocursor from "../assets/images/totorocursor.png";
 
-const GlobalStyle = createGlobalStyle`
+const GlobalStyles = createGlobalStyle`
 
 :root {
     --white: #E8F1F2;
@@ -87,7 +87,7 @@ button {
 
 
     :hover {
-      cursor: url(${totoro2}), auto;
+      cursor: url(${totorocursor}), auto;
       color: var(--white);
       background: rgba(229, 9, 2, 0.8);
       transition: ease-in-out 0.4s;
@@ -111,4 +111,4 @@ button {
 
 `;
 
-export default GlobalStyle;
+export default GlobalStyles;
