@@ -20,10 +20,10 @@ export const SelectWrapper = styled.div`
   select {
     background: transparent;
     font-size: 1rem;
-
     font-family: "LouisGeorgeCafe";
     border: none;
     text-align: center;
+    color: var(--dark-blue);
 
     &:focus {
       outline: none;
@@ -35,6 +35,10 @@ export const SelectWrapper = styled.div`
     }
   }
 
+  label {
+    white-space: nowrap;
+  }
+
   option {
     background: rgba(232, 241, 242, 0.7);
     border: none;
@@ -42,7 +46,7 @@ export const SelectWrapper = styled.div`
 
   @media screen and (max-width: 600px) {
     font-size: 0.8rem;
-    margin: 0;
+
 
     select {
       font-size: 0.8rem;

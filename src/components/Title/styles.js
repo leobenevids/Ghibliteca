@@ -23,6 +23,6 @@ export const TitleHeader = styled.div`
   }
 
   @media screen and (max-width: 600px){
-    display: none;
+    font-size: large.8rem;
   }
 `;

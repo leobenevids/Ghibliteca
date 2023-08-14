@@ -52,12 +52,7 @@ const Home = () => {
             <Loading />
           ) : (
             <Fragment>
-              <Select
-                films={films}
-                updateFilms={setFilms}
-                position={currentIndex + 1}
-                quantity={films.length}
-              />
+              <Select films={films} updateFilms={setFilms} />
               <MovieView
                 movie={currentMovie}
                 movies={films}
