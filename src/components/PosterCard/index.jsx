@@ -9,9 +9,7 @@ const PosterCard = ({ title, image, score, date, japanese }) => {
         <span>{japanese}</span>
       </div>
 
-      <div className="content">
-        <img src={image} alt={title} />
-      </div>
+      <img src={image} alt={title} />
 
       <footer>
         <span>{score / 10}</span>

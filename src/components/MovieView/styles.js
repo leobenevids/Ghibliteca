@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import totorocursor from "../../assets/images/totorocursor.png";
 
-export const CarouselContainer = styled.div`
+export const FrameContainer = styled.div`
   position: relative;
   font-family: "LosingGripRegular";
   display: flex;
@@ -21,16 +21,15 @@ export const CarouselContainer = styled.div`
     cursor: url(${totorocursor}), auto;
   }
 
-  @media screen and (max-width: 760px) {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  @media screen and (max-width: 600px) {
     width: 100%;
-    min-width: 100%;
+    height: 75%;
+    background: transparent;
+    box-shadow: none;
   }
 `;
 
-export const Carousel = styled.div`
+export const Frame = styled.div`
   display: flex;
   margin: 0.5rem;
   overflow-x: hidden;
@@ -38,7 +37,7 @@ export const Carousel = styled.div`
   -webkit-overflow-scrolling: touch;
   scroll-behavior: smooth;
 
-  @media screen and (max-width: 760px) {
+  @media screen and (max-width: 600px) {
     flex-direction: column;
     margin: 0;
   }

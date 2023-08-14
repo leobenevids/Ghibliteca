@@ -9,7 +9,7 @@ export const Card = styled.div`
   margin: 0.25rem;
   padding: 0.25rem;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  background: rgba(232, 241, 242, 0.70);
+  background: rgba(232, 241, 242, 0.7);
   border-radius: 5px;
   scroll-snap-align: start;
   pointer-events: none;
@@ -18,7 +18,6 @@ export const Card = styled.div`
     display: flex;
     flex-direction: column;
     margin-bottom: 0.25rem;
-
 
     p {
       color: var(--deep-blue);
@@ -32,15 +31,12 @@ export const Card = styled.div`
     }
   }
 
-  .content {
-    height: 550px;
-    img {
-      max-height: 100%;
-      pointer-events: touch;
-      box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
-        rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
-      border-radius: 5px;
-    }
+  img {
+    max-height: 550px;
+    pointer-events: touch;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+      rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    border-radius: 5px;
   }
 
   footer {
@@ -51,10 +47,10 @@ export const Card = styled.div`
     align-items: center;
   }
 
-  @media screen and (max-width: 760px) {
+  @media screen and (max-width: 600px) {
     width: 100%;
-    border-radius: 0;
-
+    pointer-events: all;
+    
     .title {
       p {
         font-size: 4vh;
@@ -65,8 +61,8 @@ export const Card = styled.div`
       }
     }
 
-    footer {
-      font-size: 4vh;
+    img {
+      max-height: 60vh;
     }
   }
 `;

@@ -1,10 +1,9 @@
 import React from "react";
-import { Fragment } from "react";
 import PosterCard from "../PosterCard";
 import SynopsisCard from "../SynopsisCard";
-import { Carousel, CarouselContainer } from "./styles";
+import { Frame, FrameContainer } from "./styles";
 
-const MovieView = ({ film }) => {
+const MovieView = ({ movie, movies, currIndex, setCurrIndex }) => {
   const {
     title,
     image,
@@ -16,26 +15,52 @@ const MovieView = ({ film }) => {
     description,
     director,
     producer,
-  } = film;
+  } = movie;
+
+  const lastIndex = movies.length - 1;
+
+  const handleOnWheel = ({ deltaY }) => {
+    const frameElement = document.querySelector(Frame);
+    const direction = deltaY > 0 ? "next" : "previous";
+    scrollFrame(frameElement, direction);
+  };
+  
+  const scrollFrame = (element, direction) => {
+    const newIndex = defineNewIndex(direction);
+    const scrollAmount = direction === "next" ? 500 : -500;
+  
+    setCurrIndex(newIndex);
+    element?.scrollBy(scrollAmount, 0);
+  };
+  
+  const defineNewIndex = (direction) => {
+    if (direction === "next") {
+      return currIndex === lastIndex ? 0 : currIndex + 1;
+    } else {
+      return currIndex === 0 ? lastIndex : currIndex - 1;
+    }
+  };
 
   return (
-    <Fragment>
-      <PosterCard
-        title={title}
-        image={image}
-        japanese={original_title}
-        score={rt_score}
-        date={release_date}
-      />
-      <SynopsisCard
-        original={original_title}
-        romanised={original_title_romanised}
-        banner={movie_banner}
-        description={description}
-        director={director}
-        producer={producer}
-      />
-    </Fragment>
+    <FrameContainer>
+      <Frame onWheel={handleOnWheel}>
+        <PosterCard
+          title={title}
+          image={image}
+          japanese={original_title}
+          score={rt_score}
+          date={release_date}
+        />
+        <SynopsisCard
+          original={original_title}
+          romanised={original_title_romanised}
+          banner={movie_banner}
+          description={description}
+          director={director}
+          producer={producer}
+        />
+      </Frame>
+    </FrameContainer>
   );
 };
 

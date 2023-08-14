@@ -104,39 +104,7 @@ export const Card = styled.div`
   }
 
 
-  @media screen and (max-width: 760px) {
-    border-radius: 0;
-    width: 100%;
-
-    .title{
-      p{
-        font-size: 2.5vh;
-      }
-
-      span {
-        font-size: 1.5vh;
-      }
-    }
-
-    .content {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      width: 300px;
-    }
-
-    img {
-      height: 100%;
-      margin-bottom: 10px;
-    }
-
-    .text-container {
-      height: 90%;
-    }
-
-    footer {
-      font-size: 1.5vh;
-    }
+  @media screen and (max-width: 600px) {
+    display: none;
   }
 `;

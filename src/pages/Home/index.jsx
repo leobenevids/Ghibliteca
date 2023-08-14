@@ -1,28 +1,34 @@
 import React, { useState, useEffect, useContext } from "react";
 import { getFilms } from "../../services/api";
-import { Wrapper, Carousel, CarouselContainer } from "./styles";
-import Popup from "../../components/Popup";
+import { Wrapper } from "./styles";
 import { Fragment } from "react";
 import NetflixBtn from "../../components/NetflixBtn";
 import CurrentMovieContext from "../../contexts/CurrentMovieContext";
 import MovieView from "../../components/MovieView";
 import { Parallax } from "react-parallax";
 import Select from "../../components/Select";
+import Popup from "../../components/Popup";
+import Loading from "../../components/Loading";
+import Title from "../../components/Title";
 
 const Home = () => {
-  const { banner, setBanner, currentMovie, setCurrentMovie } = useContext(CurrentMovieContext);
+  const { banner, setBanner, currentMovie, setCurrentMovie } =
+    useContext(CurrentMovieContext);
   const [films, setFilms] = useState([]);
   const [openPopup, setOpenPopup] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [loading, setLoading] = useState(false);
   const currentFilm = films[currentIndex];
-  const lastIndex = films.length - 1;
 
   const fetchMovies = async () => {
+    setLoading(true);
     try {
       const { data } = await getFilms();
       setFilms(data);
     } catch (error) {
       console.log(`An error occurred: ${error}`);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -30,32 +36,9 @@ const Home = () => {
     fetchMovies();
   }, []);
 
-  const handleOnWheel = ({ deltaY }) => {
-    const carousel = document.querySelector(Carousel);
-    deltaY > 0 ? scrollToNext(carousel) : scrollToPrevious(carousel);
-  };
-
-  const scrollToNext = (element) => {
-    if (currentIndex === lastIndex) {
-      setCurrentIndex(0);
-    } else {
-      setCurrentIndex(currentIndex + 1);
-    }
-    element.scrollBy(500, 0);
-  };
-
-  const scrollToPrevious = (element) => {
-    if (currentIndex === 0) {
-      setCurrentIndex(lastIndex);
-    } else {
-      setCurrentIndex(currentIndex - 1);
-    }
-    element.scrollBy(-500, 0);
-  };
-
   useEffect(() => {
     if (currentFilm) {
-      setCurrentMovie(currentFilm)
+      setCurrentMovie(currentFilm);
       setBanner(currentFilm.movie_banner);
     }
   }, [currentIndex, films]);
@@ -64,23 +47,27 @@ const Home = () => {
     <Fragment>
       <Parallax blur={10} bgImage={banner} strength={100}>
         <Wrapper>
-          {films && (
-            <Select
-              films={films}
-              updateFilms={setFilms}
-              position={currentIndex+1}
-              quantity={films.length}
-            />
+          {loading ? (
+            <Loading />
+          ) : (
+            <Fragment>
+              <Select
+                films={films}
+                updateFilms={setFilms}
+                position={currentIndex + 1}
+                quantity={films.length}
+              />
+              <MovieView
+                movie={currentMovie}
+                movies={films}
+                currIndex={currentIndex}
+                setCurrIndex={setCurrentIndex}
+                key={currentMovie.id}
+              />
+              {openPopup && <Popup setOpenPopup={setOpenPopup} />}
+              <NetflixBtn setOpenPopup={setOpenPopup} />
+            </Fragment>
           )}
-          <CarouselContainer>
-            {openPopup && <Popup setOpenPopup={setOpenPopup} />}
-            <Carousel onWheel={handleOnWheel}>
-              {currentMovie && (
-                <MovieView lastIndex={lastIndex} film={currentMovie} key={currentMovie?.id} />
-              )}
-            </Carousel>
-          </CarouselContainer>
-          <NetflixBtn setOpenPopup={setOpenPopup} />
         </Wrapper>
       </Parallax>
     </Fragment>
