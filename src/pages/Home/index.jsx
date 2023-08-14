@@ -10,6 +10,7 @@ import Select from "../../components/Select";
 import Popup from "../../components/Popup";
 import Loading from "../../components/Loading";
 import Count from "../../components/Count";
+import { getNetflixId } from "../../helpers";
 
 const Home = () => {
   const { banner, setBanner, currentMovie, setCurrentMovie } =
@@ -64,9 +65,21 @@ const Home = () => {
                 setCurrIndex={setCurrentIndex}
                 key={currentMovie.id}
               />
-              <Count quantity={films.length} currIndex={currentIndex} setCurrIndex={setCurrentIndex}/>
-              {openPopup && <Popup setOpenPopup={setOpenPopup} />}
-              <NetflixBtn setOpenPopup={setOpenPopup} />
+              <Count
+                quantity={films.length}
+                currIndex={currentIndex}
+                setCurrIndex={setCurrentIndex}
+              />
+              {openPopup && (
+                <Popup
+                  setOpenPopup={setOpenPopup}
+                  netflixId={getNetflixId(currentMovie)}
+                />
+              )}
+              {getNetflixId(currentMovie) && (
+                <NetflixBtn setOpenPopup={setOpenPopup} />
+              )}
+              {/* <button>Watch trailer</button> */}
             </Fragment>
           )}
         </Wrapper>
