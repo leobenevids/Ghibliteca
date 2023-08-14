@@ -24,25 +24,30 @@ const MovieView = ({ movie, movies, currIndex, setCurrIndex }) => {
     const direction = deltaY > 0 ? "next" : "previous";
     scrollFrame(frameElement, direction);
   };
-  
+
   const scrollFrame = (element, direction) => {
-    const newIndex = defineNewIndex(direction);
+    defineNewIndex(direction);
     const scrollAmount = direction === "next" ? 500 : -500;
-  
-    setCurrIndex(newIndex);
+
     element?.scrollBy(scrollAmount, 0);
   };
-  
+
   const defineNewIndex = (direction) => {
     if (direction === "next") {
-      return currIndex === lastIndex ? 0 : currIndex + 1;
+      setCurrIndex(currIndex === lastIndex ? 0 : currIndex + 1)
     } else {
-      return currIndex === 0 ? lastIndex : currIndex - 1;
+      setCurrIndex(currIndex === 0 ? lastIndex : currIndex - 1)
     }
   };
 
   return (
     <FrameContainer>
+      {/* <button
+        style={{ position: "absolute" }}
+        onClick={() => defineNewIndex("previous")}
+      >
+        previous
+      </button> */}
       <Frame onWheel={handleOnWheel}>
         <PosterCard
           title={title}
@@ -60,6 +65,12 @@ const MovieView = ({ movie, movies, currIndex, setCurrIndex }) => {
           producer={producer}
         />
       </Frame>
+      {/* <button
+        style={{ position: "absolute", right: "0" }}
+        onClick={() => defineNewIndex("next")}
+      >
+        next
+      </button> */}
     </FrameContainer>
   );
 };

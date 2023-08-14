@@ -9,7 +9,7 @@ import { Parallax } from "react-parallax";
 import Select from "../../components/Select";
 import Popup from "../../components/Popup";
 import Loading from "../../components/Loading";
-import Title from "../../components/Title";
+import Count from "../../components/Count";
 
 const Home = () => {
   const { banner, setBanner, currentMovie, setCurrentMovie } =
@@ -64,6 +64,7 @@ const Home = () => {
                 setCurrIndex={setCurrentIndex}
                 key={currentMovie.id}
               />
+              <Count quantity={films.length} currIndex={currentIndex} setCurrIndex={setCurrentIndex}/>
               {openPopup && <Popup setOpenPopup={setOpenPopup} />}
               <NetflixBtn setOpenPopup={setOpenPopup} />
             </Fragment>
