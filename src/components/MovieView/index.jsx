@@ -42,12 +42,6 @@ const MovieView = ({ movie, movies, currIndex, setCurrIndex }) => {
 
   return (
     <FrameContainer>
-      {/* <button
-        style={{ position: "absolute" }}
-        onClick={() => defineNewIndex("previous")}
-      >
-        previous
-      </button> */}
       <Frame onWheel={handleOnWheel}>
         <PosterCard
           title={title}
@@ -65,12 +59,6 @@ const MovieView = ({ movie, movies, currIndex, setCurrIndex }) => {
           producer={producer}
         />
       </Frame>
-      {/* <button
-        style={{ position: "absolute", right: "0" }}
-        onClick={() => defineNewIndex("next")}
-      >
-        next
-      </button> */}
     </FrameContainer>
   );
 };

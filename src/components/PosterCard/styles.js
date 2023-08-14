@@ -13,6 +13,7 @@ export const Card = styled.div`
   border-radius: 5px;
   scroll-snap-align: start;
   pointer-events: none;
+  width: 380px;
 
   .title {
     display: flex;

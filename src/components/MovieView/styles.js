@@ -8,9 +8,6 @@ export const FrameContainer = styled.div`
   align-items: center;
   justify-content: center;
   text-align: center;
-  width: 47.5vw;
-  max-width: 910px;
-  height: 67vh;
   border-radius: 5px;
   background: var(--white-blue-gradient);
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,

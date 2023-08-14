@@ -17,9 +17,6 @@ export const SelectWrapper = styled.div`
     margin-right: 5px;
   }
 
-  label {
-  }
-
   select {
     background: transparent;
     font-size: 1rem;
@@ -40,8 +37,15 @@ export const SelectWrapper = styled.div`
 
   option {
     background: rgba(232, 241, 242, 0.7);
-
-    /* background-color: var(--white); */
     border: none;
+  }
+
+  @media screen and (max-width: 600px) {
+    font-size: 0.8rem;
+    margin: 0;
+
+    select {
+      font-size: 0.8rem;
+    }
   }
 `;

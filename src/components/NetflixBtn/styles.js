@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import totorocursor from "../../assets/images/totorocursor.png";
 
 export const Button = styled.button`
   margin-top: 1rem;
@@ -29,5 +28,9 @@ export const Button = styled.button`
     span {
       color: var(--white);
     }
+  }
+
+  @media screen and (max-width: 600px) {
+    margin: 0;
   }
 `;
