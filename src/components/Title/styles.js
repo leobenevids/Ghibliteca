@@ -3,12 +3,11 @@ import totorocursor from "../../assets/images/totorocursor.png";
 
 export const TitleHeader = styled.div`
   display: flex;
-  width: 15%;
   align-items: center;
   justify-content: center;
   text-align: center;
   font-family: "LouisGeorgeCafeBold";
-  font-size: 3.5rem;
+  font-size: 1rem;
   color: var(--deep-blue);
   
   p {
@@ -18,7 +17,7 @@ export const TitleHeader = styled.div`
 
     span {
       font-family: "LosingGripRegular";
-      font-size: 5rem;
+      font-size: 1.5rem;
       color: var(--dark-blue);
     }
   }

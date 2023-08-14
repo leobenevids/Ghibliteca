@@ -43,6 +43,8 @@ export const Card = styled.div`
     }
 
     .text-container {
+      padding: .5rem;
+      margin: 0.25rem 0.45rem 0;
       height: 270px;
       overflow: hidden;
       box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px,

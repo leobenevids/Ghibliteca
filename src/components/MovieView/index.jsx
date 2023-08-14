@@ -2,24 +2,38 @@ import React from "react";
 import { Fragment } from "react";
 import PosterCard from "../PosterCard";
 import SynopsisCard from "../SynopsisCard";
+import { Carousel, CarouselContainer } from "./styles";
 
 const MovieView = ({ film }) => {
+  const {
+    title,
+    image,
+    original_title,
+    original_title_romanised,
+    rt_score,
+    release_date,
+    movie_banner,
+    description,
+    director,
+    producer,
+  } = film;
+
   return (
     <Fragment>
       <PosterCard
-        title={film.title}
-        image={film.image}
-        japanese={film.original_title}
-        score={film.rt_score}
-        date={film.release_date}
+        title={title}
+        image={image}
+        japanese={original_title}
+        score={rt_score}
+        date={release_date}
       />
       <SynopsisCard
-        original={film.original_title}
-        romanised={film.original_title_romanised}
-        banner={film.movie_banner}
-        description={film.description}
-        director={film.director}
-        producer={film.producer}
+        original={original_title}
+        romanised={original_title_romanised}
+        banner={movie_banner}
+        description={description}
+        director={director}
+        producer={producer}
       />
     </Fragment>
   );

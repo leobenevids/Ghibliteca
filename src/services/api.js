@@ -5,10 +5,5 @@ const Api = axios.create({
 });
 
 export const getFilms = async () => {
-  try {
-    const response = await Api.get("/films")
-    return response.data
-  } catch (error) {
-    console.log(error)
-  }
+    return await Api.get("/films")
 }

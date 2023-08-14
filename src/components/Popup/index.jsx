@@ -1,9 +1,9 @@
 import React from "react";
 import { Background, Container, Content, Buttons } from "./styles";
 
-const Popup = ({ closePopup }) => {
+const Popup = ({ setOpenPopup, currentFilm }) => {
   const openLink= () => {
-    window.open("https://www.netflix.com/browse/genre/81227213", "_blank");
+    window.open(`https://www.netflix.com/search?q=ghibli&jbv=${currentFilm?.neflix_id}`, "_blank");
   };
 
   return (
@@ -13,7 +13,7 @@ const Popup = ({ closePopup }) => {
           Oh! Do you wanna go to <span>Netflix</span>?
         </Content>
         <Buttons>
-          <button onClick={() => closePopup(false)}>Cancel</button>
+          <button onClick={() => setOpenPopup(false)}>Cancel</button>
           <button className="confirmButton" onClick={openLink}>Confirm</button>
         </Buttons>
       </Container>

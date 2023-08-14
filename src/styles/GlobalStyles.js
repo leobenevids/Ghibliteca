@@ -4,7 +4,7 @@ import LouisGeorgeCafe from "../assets/fonts/LouisGeorgeCafe.ttf";
 import LouisGeorgeCafeBold from "../assets/fonts/LouisGeorgeCafeBold.ttf";
 import LouisGeorgeCafeLight from "../assets/fonts/LouisGeorgeCafeLight.ttf";
 import Bebas from "../assets/fonts/Bebas-Regular.ttf";
-import totorocursor from "../assets/images/totorocursor.png"
+import totorocursor from "../assets/images/totorocursor.png";
 
 const GlobalStyles = createGlobalStyle`
 
@@ -17,7 +17,7 @@ const GlobalStyles = createGlobalStyle`
     --deep-blue: #13293D;
     --confirm-blue: #3E92CC;
     --medium-blue-gradient: linear-gradient(#247BA0, #006494);
-    --white-blue-gradient: linear-gradient(rgba(232, 241, 242, 0.5), /* Replace with your desired RGBA color */
+    --white-blue-gradient: linear-gradient(rgba(232, 241, 242, 0.5),
       rgba(36, 123, 160, 0.5));
     --blue-white-gradient: linear-gradient(#9BD1E5, #E8F1F2);
     --red: #e50914;
@@ -66,6 +66,7 @@ button {
 
   :hover {
     cursor: url(${totorocursor}), auto;
+    transition: all 0.5s ease;
   }
 }
 
